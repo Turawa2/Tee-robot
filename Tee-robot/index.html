@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="index.css" />
+
+    <title>Chat</title>
+  </head>
+  <body onload="start()">
+    <div id="main">
+      <div class="head" style="display: flex">
+        &ensp;&ensp;&ensp;&ensp;&ensp; &ensp;
+        <h2>Tee-robot</h2>
+
+        <button
+          id="darkModeButton"
+          style="
+            height: 30px;
+            width: 30px;
+            outline: none;
+            border-radius: 50%;
+            margin-top: 5px;
+            border: none;
+            margin: 4px;
+          "
+          onclick="toggleDarkMode()"
+        >
+          <!-- <span class="bi bi-sun-fill"></span> -->
+        </button>
+        <button
+          id="speakModeButton"
+          style="
+            height: 30px;
+            outline: none;
+            width: 30px;
+            border-radius: 50%;
+            margin-top: 5px;
+            border: none;
+            margin: 4px;
+          "
+          onclick="toggleSpeakMode()"
+        >
+          <span class="bi bi-mic-mute-fill dark"></span>
+        </button>
+        <button
+          id="fileIcon"
+          style="
+            height: 30px;
+            outline: none;
+            width: 30px;
+            border-radius: 50%;
+            margin-top: 5px;
+            border: none;
+            margin: 4px;
+          "
+          onclick="openModal()"
+        >
+          <span class="bi bi-list-ul"></span>
+        </button>
+
+        <button
+          id="guideIcon"
+          style="
+            height: 30px;
+            outline: none;
+            width: 30px;
+            border-radius: 50%;
+            margin-top: 5px;
+            border: none;
+            margin: 4px;
+          "
+          onclick="openGuide()"
+        >
+          <span class="bi bi-question-circle-fill"></span>
+        </button>
+      </div>
+      <div id="msg_area">
+        <div id="robot">
+          <div id="bot"></div>
+        </div>
+      </div>
+      <div id="input">
+        <input id="text" type="text" placeholder="Message" />
+        <button id="send">Send</button>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal">
+      <div id="modalContent">
+        <span id="closeModal" onclick="closeModal()" class="bi bi-x-circle-fill" style="font-size: 20px; color: white;"></span>
+       <div class="list">
+        <center>
+        <h1>Topics</h1>
+        <input type="search" id="searchInput" placeholder="search for topics....." />
+<br>
+
+ <button data-search="Internet" onclick="copyText('Internet', this)">Internet</button>
+<button data-search="Network" onclick="copyText('Network', this)">Network</button>
+<button data-search="Media Cable" onclick="copyText('Media Cable', this)">Media Cable</button>
+ <button data-search="Web Server" onclick="copyText('Web Server', this)">Web Server</button>
+<button data-search="Web Browser" onclick="copyText('Web Browser', this)">Web Browser</button>
+<button data-search="Web Page" onclick="copyText('Web Page', this)">Web Page</button> 
+<button data-search="Web Development" onclick="copyText('Interview', this)">Interview</button>
+<button data-search="Search Engine" onclick="copyText('Search Engine', this)">Search Engine</button>
+<button data-search="Web Hosting" onclick="copyText('Web Hosting', this)">Web Hosting</button>
+ <button data-search="Website" onclick="copyText('Website', this)">Website</button>
+<button data-search="Web Design" onclick="copyText('Web Design', this)">Web Design</button>
+
+
+<button data-search="Program" onclick="copyText('Program', this)">Program</button>
+<button data-search="Computer" onclick="copyText('Computer', this)">Computer</button>
+<button data-search="Software" onclick="copyText('Software', this)">Software</button>
+<button data-search="Operating System" onclick="copyText('Operating System', this)">Operating System</button>
+<button data-search="Word Processing" onclick="copyText('Word Processing', this)">Word Processing</button>
+<button data-search="Spreadsheet" onclick="copyText('Spreadsheet', this)">Spreadsheet</button>
+<button data-search="Presentation Package" onclick="copyText('Internet', this)">Internet</button>
+<button data-search="Accounting" onclick="copyText('Accounting', this)">Accounting</button>
+<button data-search="Database Management System" onclick="copyText('Database Management System', this)">Database Management System</button>
+<button data-search="Microsoft Access" onclick="copyText('Microsoft Access', this)">Microsoft Access</button>
+<button data-search="Information" onclick="copyText('Information', this)">Information</button>
+<button data-search="Seminar" onclick="copyText('Seminar', this)">Seminar</button>
+<button data-search="Society" onclick="copyText('Internet', this)">Internet</button>
+<button data-search="Machine" onclick="copyText('Machine', this)">Machine</button>
+<button data-search="Calculating Devices" onclick="copyText('Calculating Devices', this)">Calculating Devices</button>
+<button data-search="Generations of Computers" onclick="copyText('Generations of Computers', this)">Generations of Computers</button>
+<button data-search="Communication" onclick="copyText('Communication', this)">Communication</button>
+<button data-search="Algorithm" onclick="copyText('Algorithm', this)">Algorithm</button>
+<button data-search="Flowchart" onclick="copyText('Flowchart', this)">Flowchart</button>
+<button data-search="Java" onclick="copyText('Java', this)">Java</button>
+<button data-search="Fotran" onclick="copyText('Fotran', this)">Fotran</button>
+<button data-search="C++" onclick="copyText('C++', this)">C++</button>
+<button data-search="Hardware Maintainance" onclick="copyText('Hardware Maintainance', this)">Hardware Maintainance</button>
+<button data-search="Software Maintainance" onclick="copyText('Software Maintainance', this)">Software Maintainance</button>
+<button data-search="Storage Management" onclick="copyText('Storage Management', this)">Storage Maintainance</button>
+<button data-search="Backup and Recovery" onclick="copyText('Backup and Recovery', this)">Backup and Recovery</button>
+<button data-search="Performance optimization" onclick="copyText('Performance optimization', this)">Performance optimization</button>
+<button data-search="Network Maintainance" onclick="copyText('Network Maintainance', this)">Network Maintainance</button>
+<button data-search="Peripheral Devices" onclick="copyText('Peripheral Devices', this)">Peripheral Devices</button>
+<button data-search="Security Measures" onclick="copyText('Security Measures', this)">Security Measures</button>
+<button data-search="Battery Maintainance" onclick="copyText('Battery Maintainance', this)">Battery Maintainance</button>
+<button data-search="System Monitoring" onclick="copyText('System Monitoring', this)">System Monitoring</button>
+<button data-search="Startup Issues" onclick="copyText('Startup Issues', this)">Startup Issues</button>
+<button data-search="Blue Screen of Death" onclick="copyText('Blue Screen of Death', this)">Blue Screen of Death</button>
+<button data-search="Software Crashes" onclick="copyText('Software Crashes', this)">Software Crashes</button>
+<button data-search="Slow Performance" onclick="copyText('Slow Performance', this)">Slow Performance</button>
+<button data-search="internet connectivity problem" onclick="copyText('internet connectivity problem', this)">internet connectivity problem</button>
+<button data-search="Data Loss" onclick="copyText('Data Loss', this)">Data Loss</button>
+<button data-search="Data Recovery" onclick="copyText('Data Recovery', this)">Data Recovery</button>
+<button data-search="Prevent Data Loss" onclick="copyText('Prevent Data Loss', this)">Prevent Data Loss</button>
+<button data-search="Overheating Issues" onclick="copyText('Overheating Issues', this)">Overheating Issues</button>
+<button data-search="Unresponsive System" onclick="copyText('Unresponsive System', this)">Unresponsive System</button>
+<button data-search="Error Messages" onclick="copyText('Error Messages', this)">Error Messages</button>
+<button data-search="Beep Codes" onclick="copyText('Beep Codes', this)">Beep Codes</button>
+<button data-search="Number Codes" onclick="copyText('Number Codes', this)">Number Codes</button>
+<button data-search="Beep Codes" onclick="copyText('Beep Codes', this)">Beep Codes</button>
+
+
+
+
+            </center>
+
+
+
+       </div>
+      </div>
+    </div>
+  <script>
+  function copyText(text, button) {
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    // Change the button text to 'Copied' after copying
+    button.innerText = 'Copied';
+    // Reset the button text after a delay (you can adjust the delay if needed)
+    setTimeout(function () {
+      button.innerText = text;
+    }, 1500); // 1500 milliseconds (1.5 seconds) delay
+  }
+
+ // Function to handle search
+  document.getElementById('searchInput').addEventListener('input', function () {
+    var searchValue = this.value.toLowerCase();
+    var buttons = document.querySelectorAll('.list button');
+
+    buttons.forEach(function (button) {
+      var buttonText = button.textContent.toLowerCase();
+      if (buttonText.includes(searchValue)) {
+        button.style.display = 'inline-block';
+      } else {
+        button.style.display = 'none';
+      }
+    });
+  });
+
+</script>
+
+    <!-- Guide -->
+    <div id="myGuide">
+      <div id="guideContent">
+        <span  id="closeGuide" onclick="closeGuide()"  class="bi bi-x-circle-fill" style="font-size: 20px;"></span>
+        <br>
+        <p> <b>Pro Tips</b> </p>
+          
+            <ul>
+               <li> Type a specific topic name, such as "Internet" or "Define Internet"</li>
+               <li> Be Specific in your topic search for accurate results.</li>
+               <li>Click on the list icon to explore available topics within the app</li>
+          </ul>
+          <p>
+
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+
+    <script>
+      function openModal() {
+        document.getElementById("myModal").classList.add("show");
+        document.getElementById("modalContent").style.left = "0";
+      }
+
+      function closeModal() {
+        document.getElementById("myModal").classList.remove("show");
+        document.getElementById("modalContent").style.left = "-100%";
+      }
+    </script>
+
+    <script>
+      function openGuide() {
+        document.getElementById("myGuide").style.display = "block";
+      }
+
+      function closeGuide() {
+        document.getElementById("myGuide").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
